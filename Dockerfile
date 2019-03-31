@@ -31,4 +31,7 @@ RUN pip3 install --upgrade pip
 #AWS CLI
 RUN pip3 install awscli
 
-CMD ["/bin/sh"]
+#Scripts
+COPY scripts/ /scripts/
+
+ENTRYPOINT ["/scripts/keepalive.sh"]
